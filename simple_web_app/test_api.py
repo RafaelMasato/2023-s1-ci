@@ -6,7 +6,7 @@ from .main import app
 client = TestClient(app)
 
 
-def test_read_main_should_return_status_200():
+def test_read_main_should_retun_status_200():
     # when
     response = client.get("/")
     # then
