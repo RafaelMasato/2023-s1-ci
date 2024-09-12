@@ -5,7 +5,8 @@ from .models import PasswordValidator, ValidationResponse
 
 def test_empty_password_should_raise_exception():
     # given
-    validator = PasswordValidator(content="")
+    password = "1234567"
+    validator = PasswordValidator(content=password)
     with pytest.raises(Exception):  # then
         # when
         validator.password_validate()
