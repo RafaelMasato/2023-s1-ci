@@ -5,8 +5,7 @@ from .models import PasswordValidator, ValidationResponse
 
 def test_empty_password_should_raise_exception():
     # given
-    password = "1234567"
-    validator = PasswordValidator(content=password)
+    validator = PasswordValidator(content="")
     with pytest.raises(Exception):  # then
         # when
         validator.password_validate()
@@ -72,7 +71,7 @@ def test_8_chars_with_no_upper_case_password_should_raise_exception():
 
 def test_8_chars_with_specific_special_characters_should_raise_exception():
     # given
-    validator = PasswordValidator(content="C@Abc@A~")
+    validator = PasswordValidator(content="C@Abc@A~1")
     with pytest.raises(Exception):  # then
         # when
         validator.password_validate()
